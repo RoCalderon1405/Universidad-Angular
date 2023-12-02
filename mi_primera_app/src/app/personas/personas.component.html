@@ -1,3 +1,10 @@
-<h2>hola personas</h2>
-<app-persona></app-persona>
-<app-persona></app-persona>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Listado de personas</h1>
+      <button class="btn btn-primary" [disabled]="deshabilitar" (click)="agregarPersona()">Agregar Persona</button>
+      {{mensaje}}
+      <app-persona></app-persona>
+    </div>
+  </div>
+</div>
