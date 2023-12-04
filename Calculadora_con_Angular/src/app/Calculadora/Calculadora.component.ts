@@ -10,6 +10,7 @@ export class CalculadoraComponent {
   operandoB?: number;
   resultado?: number;
   mensaje: string = '';
+  habilitarBtn: boolean = false;
 
   mensajeInvalido() {
     this.mensaje = 'Debes ingresar ambos valores';

@@ -1,22 +1,26 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-personas',
-    templateUrl: './personas.component.html',
-    styleUrls: ['./personas.component.css']
+  selector: 'app-personas',
+  templateUrl: './personas.component.html',
+  styleUrls: ['./personas.component.css'],
 })
-
 export class PersonasComponent {
-    deshabilitar = false;
-    mensaje = 'No se ha agregado ninguna persona.'
-    titulo = 'Ingeniero';
+  deshabilitar: boolean = false;
+  mensaje: string = 'No se ha agregado ninguna persona.';
+  titulo: string = 'Ingeniero';
+  mostrar: boolean = false;
 
-    agregarPersona() {
-        this.mensaje = 'Persona agregada.';
-        this.deshabilitar = true;
-    }
+  agregarPersona() {
+    this.mostrar = true;
+    this.mensaje = 'Persona agregada';
+    setTimeout(() => {
+        this.mostrar = false;
+    }, 3*1000);
+  }
 
-    // modificarTitulo(event: Event) {
-    //     this.titulo = (<HTMLInputElement>event.target).value
-    // }
+  // modificarTitulo(event: Event) {
+  //     this.titulo = (<HTMLInputElement>event.target).value
+  // }
+
 }
