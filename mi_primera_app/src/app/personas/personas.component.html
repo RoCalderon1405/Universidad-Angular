@@ -2,9 +2,19 @@
   <div class="row">
     <div class="col">
       <h1>Listado de personas</h1>
-      <button class="btn btn-primary" [disabled]="deshabilitar" (click)="agregarPersona()">Agregar Persona</button>
-      {{mensaje}}
+      <button
+        class="btn btn-primary"
+        [disabled]="deshabilitar"
+        (click)="agregarPersona()"
+      >
+        Agregar Persona
+      </button>
+      {{ mensaje }}
       <app-persona></app-persona>
+
+      <label>Título Persona</label>
+      <input type="text" class="form-control" [(ngModel)]="titulo">
+      {{titulo}}
     </div>
   </div>
 </div>

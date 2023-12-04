@@ -2,16 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { PersonasComponent } from './personas/personas.component';
-import { PersonaComponent } from './persona/persona.component';
+import { CalculadoraComponent } from './Calculadora/Calculadora.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
-    PersonasComponent,
-    PersonaComponent,
-  ],
+      CalculadoraComponent
+   ],
   imports: [
     BrowserModule,
     FormsModule
