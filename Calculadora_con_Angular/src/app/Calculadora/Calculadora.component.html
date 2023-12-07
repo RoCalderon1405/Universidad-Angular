@@ -1,8 +1,11 @@
 <div class="container">
   <h1>Aplicación de Calculadora</h1>
-  <app-formulario 
-  (mensajeError)="mensajeError($event)"
-  (resultadoSuma)="resultadoSuma($event)"
+  <app-formulario
+    (mensajeError)="mensajeError($event)"
+    (resultadoSuma)="resultadoSuma($event)"
   ></app-formulario>
-  <app-resultado [resultadoHijo]="resultadoPadre" [mensajeHijo]="mensajePadre"></app-resultado>
+  <app-resultado
+    [resultadoHijo]="resultadoPadre"
+    [mensajeHijo]="mensajePadre"
+  ></app-resultado>
 </div>

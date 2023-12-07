@@ -11,21 +11,20 @@ export class FormularioComponent {
   habilitarBtn: boolean = false;
   mensaje: string = '';
 
-  @Output() resultadoSuma = new EventEmitter<number>();
   @Output() mensajeError = new EventEmitter<string>();
-
+  @Output() resultadoSuma = new EventEmitter<number>();
 
   funcionSumar(): void {
     if (this.operandoA === undefined || this.operandoB === undefined) {
       this.mensajeInvalido();
-      return
+      return;
     }
     if (this.operandoA !== null && this.operandoB !== null) {
       let resultado = this.operandoA + this.operandoB;
       this.resultadoSuma.emit(resultado);
     } else {
       this.mensajeInvalido();
-      return
+      return;
     }
   }
 

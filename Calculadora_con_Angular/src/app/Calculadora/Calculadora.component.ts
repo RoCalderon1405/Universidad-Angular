@@ -6,18 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./Calculadora.component.css'],
 })
 export class CalculadoraComponent {
-
-  mensajePadre: string
-  resultadoPadre: number
+  mensajePadre: string;
+  resultadoPadre: number;
 
   mensajeError(mensaje: string): void {
-    this.mensajePadre = mensaje
-    console.log(this.mensajePadre);
+    this.mensajePadre = mensaje;
   }
 
   resultadoSuma(resultado: number): void {
     this.resultadoPadre = resultado;
-    console.log(this.resultadoPadre);
   }
-
 }
