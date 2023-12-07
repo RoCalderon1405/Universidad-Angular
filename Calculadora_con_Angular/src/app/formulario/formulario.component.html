@@ -1,1 +1,30 @@
-<p>formulario works!</p>
+<div class="d-flex row">
+  <div class="mt-4">
+    <label for="">Operando A</label>
+    <input
+      type="number"
+      class="form-control mt-2"
+      [(ngModel)]="operandoA"
+      placeholder="Ingresa tu número a sumar"
+    />
+  </div>
+  <div class="mt-4">
+    <label for="">Operando B</label>
+    <input
+      type="number"
+      class="form-control mt-2"
+      [(ngModel)]="operandoB"
+      placeholder="Ingresa tu número a sumar"
+    />
+  </div>
+  <div class="mt-4">
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="habilitarBtn"
+      (click)="funcionSumar()"
+    >
+      Sumar
+    </button>
+  </div>
+</div>
