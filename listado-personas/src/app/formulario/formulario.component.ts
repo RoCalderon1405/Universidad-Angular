@@ -19,7 +19,11 @@ export class FormularioComponent {
   constructor(
     private loggingService: LoggingService,
     private personasService: personasService
-  ) {}
+  ) {
+    this.personasService.saludar.subscribe( 
+      (indice: number) => alert(`El índice es: ${indice}`)
+    )
+  }
 
   agregarPersona(): void {
     let persona1 = new Persona(
