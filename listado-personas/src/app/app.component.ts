@@ -21,9 +21,9 @@ export class AppComponent implements OnInit {
     this.personas = this.personasService.personas;
   }
 
-  personaAgregada(persona: Persona) {
-    // this.loggingService.enviaMensajeAConsola('hola'+persona.apellido)
-    // this.personas.push(persona);
-    this.personasService.personaAgregada(persona);
-  }
+  // personaAgregada(persona: Persona) {
+  //   this.loggingService.enviaMensajeAConsola('hola'+persona.apellido)
+  //   this.personas.push(persona);
+  //   this.personasService.personaAgregada(persona);
+  // }
 }
