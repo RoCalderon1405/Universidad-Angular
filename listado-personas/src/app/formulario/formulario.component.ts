@@ -11,10 +11,10 @@ import { personasService } from '../personas.service';
 export class FormularioComponent {
   // @Output() personaCreada = new EventEmitter<Persona>();
 
-  // nombreInput: string = '';
-  // apellidoInput: string = '';
-  @ViewChild('nombreInput') nombreInput: ElementRef;
-  @ViewChild('apellidoInput') apellidoInput: ElementRef;
+  nombreInput: string = '';
+  apellidoInput: string = '';
+  // @ViewChild('nombreInput') nombreInput: ElementRef;
+  // @ViewChild('apellidoInput') apellidoInput: ElementRef;
 
   constructor(
     private loggingService: LoggingService,
@@ -27,13 +27,13 @@ export class FormularioComponent {
 
   agregarPersona(): void {
     let persona1 = new Persona(
-      this.nombreInput.nativeElement.value,
-      this.apellidoInput.nativeElement.value
+      this.nombreInput,
+      this.apellidoInput
     );
     // this.loggingService.enviaMensajeAConsola("Enviamos persona: " + persona1.nombre + persona1.apellido)
     // this.personaCreada.emit(persona1);
     this.personasService.personaAgregada(persona1);
-    this.nombreInput.nativeElement.value = '';
-    this.apellidoInput.nativeElement.value = '';
+    this.nombreInput = '';
+    this.apellidoInput = '';
   }
 }
