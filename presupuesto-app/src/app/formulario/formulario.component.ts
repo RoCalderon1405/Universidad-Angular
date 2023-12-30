@@ -14,17 +14,6 @@ export class FormularioComponent implements OnInit {
 
   ingresos: Ingreso[] = [];
 
-  agregarProd() {
-    if (this.descripcionProd == '' || this.valorProd == undefined) {
-      alert('Por favor llena todos los campos del formulario. HijoDePuta.');
-      return;
-    }
-
-    let newProd = new Ingreso(this.descripcionProd, this.valorProd);
-
-    this.ingresos.push(newProd);
-  }
-
   constructor(
     private ingresoService: IngresoService,
     private egresoService: EgresoService
@@ -32,5 +21,16 @@ export class FormularioComponent implements OnInit {
 
   ngOnInit(): void {
     this.ingresos = this.ingresoService.ingreso;
+  }
+
+  agregarProd() {
+    if (this.descripcionProd == '' || this.valorProd == undefined) {
+      alert('Por favor llena todos los campos del formulario.');
+      return;
+    }
+
+    let newProd = new Ingreso(this.descripcionProd, this.valorProd);
+
+    this.ingresos.push(newProd);
   }
 }
