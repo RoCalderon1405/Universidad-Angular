@@ -17,9 +17,9 @@ export class AppComponent implements OnInit {
     private personasService: personasService
   ) {}
 
-  ngOnInit(): void {
-    this.personas = this.personasService.personas;
-  }
+    ngOnInit(): void {
+      this.personas = this.personasService.personas;
+    }
 
   // personaAgregada(persona: Persona) {
   //   this.loggingService.enviaMensajeAConsola('hola'+persona.apellido)
