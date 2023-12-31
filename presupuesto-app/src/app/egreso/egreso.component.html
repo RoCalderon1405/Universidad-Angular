@@ -4,7 +4,7 @@
   <div class="elemento limpiarEstilos" *ngFor="let egreso of egresos">
     <div class="elemento_descripcion">{{egreso.descripcion}}</div>
     <div class="right limpiarEstilos">
-      <div class="elemento_valor">- {{egreso.valor}}</div>
+      <div class="elemento_valor">- {{egreso.valor| currency : "MXN" : "$" : "1.2-2"}}</div>
       <div class="elemento_porcentaje">{{calcularPorcentaje(egreso)}}%</div>
       <div class="elemento_eliminar">
         <button class="elemento_eliminar--btn">

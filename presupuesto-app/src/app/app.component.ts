@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
     }
 
     let porcentaje = this.getEgresos() / this.getIngresos();
-    return Math.floor(porcentaje * 100);
+    return porcentaje;
   }
 
   getPresupuestoTotal() {

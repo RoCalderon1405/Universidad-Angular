@@ -1,9 +1,9 @@
-<form>
+<form #formularioProductos="ngForm">
   <div class="agregar">
     <div class="agregar_contenedor">
-      <select class="agregar_tipo">
-        <option value="ing" selected>+</option>
-        <option value="egr">-</option>
+      <select class="agregar_tipo" (change)="tipoOperacion($event)">
+        <option value="ingresoAgregar" selected>+</option>
+        <option value="egresoAgregar">-</option>
       </select>
       <input
         type="text"
@@ -21,7 +21,7 @@
         [(ngModel)]="valorProd"
         required
       />
-      <button class="agregar_btn" (click)="agregarProd()">
+      <button type="submit" class="agregar_btn" (click)="agregarProd()">
         <i class="ion-ios-checkmark-outline"></i>
       </button>
     </div>
