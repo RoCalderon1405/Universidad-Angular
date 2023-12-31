@@ -15,7 +15,7 @@ export class FormularioComponent implements OnInit {
 
   descripcionProd: string = '';
   valorProd: number;
-  tipo: string = 'ingreso';
+  tipo: string = 'ingresoAgregar';
 
   ingresos: Ingreso[] = [];
   egresos: Egreso[] = [];
