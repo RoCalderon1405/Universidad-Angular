@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Persona } from '../../persona.model';
 import { LoggingService } from '../../LoggingService.service';
 import { personasService } from '../../personas.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
@@ -18,14 +19,15 @@ export class FormularioComponent {
 
   constructor(
     private loggingService: LoggingService,
-    private personasService: personasService
+    private personasService: personasService,
+    private router: Router
   ) {
     this.personasService.saludar.subscribe( 
       (indice: number) => alert(`El índice es: ${indice}`)
     )
   }
 
-  agregarPersona(): void {
+  onGuardarPersona(): void {
     let persona1 = new Persona(
       this.nombreInput,
       this.apellidoInput
@@ -35,5 +37,6 @@ export class FormularioComponent {
     this.personasService.personaAgregada(persona1);
     this.nombreInput = '';
     this.apellidoInput = '';
+    this.router.navigate(['/personas'])
   }
 }

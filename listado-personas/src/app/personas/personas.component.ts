@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Persona } from '../persona.model';
 import { LoggingService } from '../LoggingService.service';
 import { personasService } from '../personas.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-personas',
@@ -13,12 +14,15 @@ export class PersonasComponent implements OnInit {
   personas: Persona[] = [];
 
   constructor(
-    private loggingService: LoggingService,
-    private personasService: personasService
+    private personasService: personasService,
+    private router: Router
   ) {}
 
     ngOnInit(): void {
       this.personas = this.personasService.personas;
     }
 
+    agregar(){
+      this.router.navigate(['personas/agregar'])
+    }
 }

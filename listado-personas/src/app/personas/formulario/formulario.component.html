@@ -1,21 +1,23 @@
-<form action="" class="item">
-  <input
-    type="text"
-    name="nombre"
-    id="nombre"
-    placeholder="Nombre"
-    [(ngModel)]="nombreInput"
-  />
-  <div class="form-group col-md-2">
+<div class="box">
+  <form action="" class="item" #f="ngForm" (ngSubmit)="f.form.valid && onGuardarPersona()">
     <input
       type="text"
-      name="apellido"
-      id="apellido"
-      placeholder="Apellido"
-      [(ngModel)]="apellidoInput"
+      name="nombre"
+      id="nombre"
+      placeholder="Nombre"
+      [(ngModel)]="nombreInput"
+      required
     />
-  </div>
-  <button type="submit" (click)="agregarPersona()">
-    +
-  </button>
-</form>
+    <div class="form-group col-md-2">
+      <input
+        type="text"
+        name="apellido"
+        id="apellido"
+        placeholder="Apellido"
+        [(ngModel)]="apellidoInput"
+        required
+      />
+    </div>
+    <button type="submit" style="cursor: pointer;">+</button>
+  </form>
+</div>
