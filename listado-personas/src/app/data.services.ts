@@ -9,7 +9,7 @@ export class DataServices {
   // Guardar Personas
   guardarPersonas(personas: Persona[]) {
     this.httpClient
-      .post(
+      .put(
         'https://listado-personas-21103-default-rtdb.firebaseio.com/datos.json',
         personas
       )
