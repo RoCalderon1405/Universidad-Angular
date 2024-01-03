@@ -29,12 +29,13 @@ export class FormularioComponent implements OnInit {
   ngOnInit(): void {
     this.index = this.route.snapshot.params['id'];
     this.modoEdicion = +this.route.snapshot.queryParams['modoEdicion'];
+    console.log(this.modoEdicion);
 
     if (this.modoEdicion !== null && this.modoEdicion === 1) {
       let persona: Persona = this.personasService.encontrarPersona(this.index);
+      console.log(persona);
       this.nombreInput = persona.nombre;
       this.apellidoInput = persona.apellido;
-      console.log(this.nombreInput,this.apellidoInput);
     }
   }
 
@@ -45,12 +46,14 @@ export class FormularioComponent implements OnInit {
       this.personasService.modificarPersona(persona1, this.index);
     } else {
       this.personasService.personaAgregada(persona1);
+      console.log(persona1);
     }
 
     this.nombreInput = '';
     this.apellidoInput = '';
     this.router.navigate(['/personas']);
   }
+
   eliminarPersona() {
     console.log(this.index);
     if (this.index !== null) {
