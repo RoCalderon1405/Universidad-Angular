@@ -56,6 +56,10 @@ form {
   margin-right: 20px;
 }
 
+.centrado{
+  text-align: center;
+}
+
 button {
   min-height: 50px;
   width: 50px;
